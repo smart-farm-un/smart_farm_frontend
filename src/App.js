@@ -124,8 +124,8 @@ function Home() {
   <div>
   <h2>Home</h2>
   <div className="button-group">
-    <button type="button" className="btn btn-primary">Iniciar Sesión</button>
-    <button type="button" className="btn btn-secondary">Registrate</button>
+    <a href="/login" type="button" className="btn btn-primary">Iniciar Sesión</a>
+    <a href="/signup" type="button" className="btn btn-secondary">Registrate</a>
   </div>
   
 </div>
