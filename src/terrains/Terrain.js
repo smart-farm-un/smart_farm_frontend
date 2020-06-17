@@ -4,7 +4,13 @@ import React from 'react';
 function Terrains(){
     return (
         <form className="container"> 
-            <h1>Terrenos</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/producerMenu">Menu</a></li>
+                    <li class="breadcrumb-item"><a href="/terrains">Terrenos</a></li>
+                </ol>
+            </nav>
+            <h1>Nuevo Terreno</h1>
             <div className="row">
                 <div className="form-group col">
                     <label htmlFor="exampleFormControlInput1">Nombre del terreno:</label>

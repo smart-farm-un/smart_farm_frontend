@@ -11,7 +11,7 @@ function ProducerMenu(){
     <ul className="bs-glyphicons-list">
 
       <li>
-        <Link to='interviews' className="">
+        <Link to='terrains' className="">
             <FontAwesomeIcon icon={faMountain} size="6x" className="icon-brown" ></FontAwesomeIcon> 
             <h4><span className="glyphicon-className icon-brown">{"Terrenos"}
           </span></h4>

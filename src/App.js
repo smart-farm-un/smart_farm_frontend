@@ -17,6 +17,7 @@ import ProducerMenu from './menus/ProducerMenu';
 import ConveyorMenu from './menus/ConveyorMenu';
 import Crops from './crops/Crops';
 import Terrain from './terrains/Terrain';
+import Terrains from './terrains/index';
 import SignUpBuyer from './users/SignUpBuyer';
 import AdminMenu from './menus/AdminMenu';
 
@@ -52,6 +53,9 @@ function App() {
           {/**Terrains related */}
           <Route path="/terrains/new">
             <Terrain/>
+          </Route>
+          <Route path="/terrains/">
+            <Terrains/>
           </Route>
           {/** Menus Related */}
           <Route path="/producerMenu">
