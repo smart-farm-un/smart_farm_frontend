@@ -19,7 +19,7 @@ function ProducerMenu(){
         
       </li>
       <li>
-        <Link to='interviews' className="">
+        <Link to='crops' className="">
             <FontAwesomeIcon icon={faSeedling} size="6x" className="icon-green" ></FontAwesomeIcon> 
             <h4><span className="glyphicon-className icon-green">{"Cultivos"}
           </span></h4>
@@ -35,7 +35,7 @@ function ProducerMenu(){
         
       </li>
       <li>
-        <Link to='interviews' className="">
+        <Link to='/signupproducer' className="">
             <FontAwesomeIcon icon={faCogs} size="6x" className="icon-gray" ></FontAwesomeIcon> 
             <h4><span className="glyphicon-className icon-gray">{"Configuraciones"}
           </span></h4>

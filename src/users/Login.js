@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom'; 
 
-const PATH_BASE = `http://localhost:3000/auth/sign_in`;
+const PATH_BASE = `${process.env.REACT_APP_BACKEND_URL}/auth/sign_in`;
 
 export default class Login extends Component {
 

@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 import { faTrash} from '@fortawesome/free-solid-svg-icons';
 
-const PATH_BASE = `${process.env.REACT_APP_BACKEND_URL}/terrains`;
+const PATH_BASE = `${process.env.REACT_APP_BACKEND_URL}/crops`;
 
-class Terrains extends Component{
+class Crops extends Component{
     constructor(props){
         super(props);
 
@@ -23,20 +23,20 @@ class Terrains extends Component{
     };
 
     componentDidMount(){
-        this.loadTerrainsFromServer();
+        this.loadCropsFromServer();
         //this.loadCurrentUserFromServer();
     }
 
-    loadTerrainsFromServer(){
+    loadCropsFromServer(){
         let queryURL = `${PATH_BASE}`;
         console.log("Query URL:" + queryURL);
         fetch(queryURL)
         .then(response => response.json())
-        .then(result => this.setTerrains(result))
+        .then(result => this.setCrops(result))
         .catch(error => error);
     }
 
-    setTerrains(result){
+    setCrops(result){
         this.setState({result});
     }
 
@@ -69,20 +69,20 @@ class Terrains extends Component{
                     <li className="breadcrumb-item"><a href="/producerMenu">Menu</a></li>
                 </ol>
             </nav>
-            <h1>Terrenos</h1>
+            <h1>Cultivos</h1>
 
-            <a href="/terrains/new" type="button" className="btn btn-primary">Agregar Terreno</a>
+            <a href="/crops/new" type="button" className="btn btn-primary">Agregar Cultivo</a>
             {pageComponent}
             <table className="table table-bordered table-hover table-sm">
                 <thead className="thead-dark">
                     <tr>
                         <th scope="col" >id</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Area (m2)</th>
-                        <th scope="col">Fuente de energía</th>
-                        <th scope="col">Fuente de agua</th>
-                        <th scope="col">Estado vias de acceso</th>
-                        <th scope="col">Predio Cercano al municipio</th>
+                        <th scope="col">Tipo de Cultivo</th>
+                        <th scope="col">Fecha de siembra</th>
+                        <th scope="col">Fecha esperada de cosecha</th>
+                        <th scope="col">Fecha real de cosecha</th>
+                        <th scope="col">Area de cultivo</th>
+                        <th scope="col">Terreno</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
                     </tr>
@@ -92,12 +92,12 @@ class Terrains extends Component{
                      item => 
                      <tr key={item.id}>
                          <th scope="row">{item.id}</th>
-                         <td>{item.name}</td>
-                         <td>{item.area}</td>
-                         <td>{item.source_energy}</td>
-                         <td>{item.source_water}</td>
-                         <td>{item.state_path}</td>
-                         <td>{item.close_town}</td>
+                         <td>{item.crop_type}</td>
+                         <td>{item.sowing_date}</td>
+                         <td>{item.harvesting_planned_date}</td>
+                         <td>{item.actual_harvesting_date}</td>
+                         <td>{item.sowing_area}</td>
+                         <td>{item.terrain_id}</td>
                          <td>
                             <a href={"/users/"+item.id+ '/edit'}> 
                             <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
@@ -117,4 +117,4 @@ class Terrains extends Component{
     }
 }
 
-export default Terrains;
+export default Crops;

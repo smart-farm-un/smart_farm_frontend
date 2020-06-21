@@ -4,7 +4,7 @@ import axios from 'axios';
 import {Redirect} from 'react-router-dom';
 
 
-const TERRAINS_URL = `http://localhost:3000/terrains`;
+const TERRAINS_URL = `${process.env.REACT_APP_BACKEND_URL}/terrains`;
 
 class  Terrains extends Component{
 

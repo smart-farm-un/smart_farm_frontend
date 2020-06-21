@@ -15,18 +15,21 @@ import SignUpConveyor from './users/SignUpConveyor';
 import Vehicle from './vehicles/index';
 import ProducerMenu from './menus/ProducerMenu';
 import ConveyorMenu from './menus/ConveyorMenu';
-import Crops from './crops/Crops';
+import Crop from './crops/Crop';
+import Crops from './crops/index';
 import Terrain from './terrains/Terrain';
 import Terrains from './terrains/index';
 import SignUpBuyer from './users/SignUpBuyer';
 import AdminMenu from './menus/AdminMenu';
 
+import Background from './images/background2.jpg';
+
 function App() {
   return (
     <Router>
     <Suspense fallback="loading">
-    <div className="App">
-
+    <div className="App" >
+    
       <Header></Header>
       <div className="mt-4 ml-3">
         <Switch>
@@ -48,6 +51,9 @@ function App() {
           </Route>
           {/**Crops related */}
           <Route path="/crops/new">
+            <Crop/>
+          </Route>
+          <Route path="/crops">
             <Crops/>
           </Route>
           {/**Terrains related */}
